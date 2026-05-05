@@ -1,0 +1,87 @@
+site:
+  base_url: "https://www.saucedemo.com"
+  base_url_login_path: "https://www.saucedemo.com"
+  wait_after_login: "**"
+  spa_seed_routes:
+    - "/"
+  max_pages: 200
+  timeout_per_page: 45
+
+llm:
+  provider: "groq"
+  model: "meta-llama/llama-4-scout-17b-16e-instruct"
+  temperature: 1.0
+
+auth:
+  headless: false
+  selector_timeout_ms: 2000
+  page_load_timeout_ms: 30000
+  rest_endpoint: "/api/session"
+  rest_auth_method: "basic"
+  form:
+    wait_before_fill_ms: 3000
+    wait_after_submit_ms: 5000
+    username_selectors:
+      - "#tbLoginUserName"
+      - "input[name='UserName']"
+      - "input[name='username']"
+      - "input[id='username']"
+      - "input[type='text']"
+      - "input[autocomplete='username']"
+      - "input[placeholder*='user' i]"
+      - "input[placeholder*='email' i]"
+      - "#username"
+    password_selectors:
+      - "#Password"
+      - "input[name='Password']"
+      - "input[type='password']"
+      - "input[name='password']"
+      - "input[id='password']"
+      - "input[autocomplete='current-password']"
+      - "#password"
+    submit_selectors:
+      - "input[type='submit'][value='Log me in']"
+      - "button[type='submit']"
+      - "input[type='submit']"
+      - "button[id*='login' i]"
+      - "button[class*='login' i]"
+      - "button[class*='submit' i]"
+    success_check:
+      must_not_contain: "login"
+  agent:
+    max_steps: 10
+    snapshot_max_tokens: 4000
+    task_template: >
+      The login page is already open at {login_url}.
+      Find and fill the username or email field with: {username}
+      Find and fill the password field with: {password}
+      Click the login or submit button.
+      Wait until the URL no longer contains '/login'.
+      Confirm login success by checking the current URL.
+
+session:
+  state_file: "auth_state.json"
+  max_age_hours: 24
+  session_id: "authenticated_session"
+
+output:
+  folder: "output"
+  results_file: "output/results.json"
+  summary_file: "output/summary.txt"
+  debug_screenshot: "output/debug_login.png"
+
+crawl:
+  excluded_extensions:
+    - ".pdf"
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".gif"
+    - ".zip"
+    - ".csv"
+    - ".mp4"
+    - ".mp3"
+    - ".doc"
+    - ".docx"
+    - ".xls"
+    - ".xlsx"
