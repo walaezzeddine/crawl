@@ -1,0 +1,11 @@
+{
+  "cookies": [
+    {
+      "name": "JSESSIONID",
+      "value": "868DA1CDB769BC003632D303FD4E41D9",
+      "domain": "o3.openmrs.org",
+      "path": "/"
+    }
+  ],
+  "origins": []
+}

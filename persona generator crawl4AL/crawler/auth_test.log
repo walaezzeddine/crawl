@@ -1,0 +1,7 @@
+C:\Users\Lenovo\AppData\Roaming\Python\Python313\site-packages\requests\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (7.4.3)/charset_normalizer (3.4.2) doesn't match a supported version!
+  warnings.warn(
+[11:42:27] INFO - ­ƒÜÇ Starting authenticated crawler for https://portal-qa.talansm.com
+[11:42:27] INFO - ­ƒöÉ Creating new session using auto-fallback chain...
+[11:42:28] WARNING - REST API login failed: Expecting value: line 1 column 1 (char 0)
+[11:42:28] WARNING - Login strategy failed: REST API
+[11:42:36] INFO - Ô£à Username filled: input[name='username']

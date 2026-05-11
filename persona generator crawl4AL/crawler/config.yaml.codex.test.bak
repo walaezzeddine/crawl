@@ -1,0 +1,44 @@
+site:
+  base_url: "https://o3.openmrs.org/openmrs/spa"
+  login_url: "https://o3.openmrs.org/openmrs/spa/login"
+  wait_after_login: "**/home**"
+  spa_seed_routes:
+    - "/home"
+    - "/patient-list"
+    - "/appointments"
+    - "/login"
+  max_pages: 50
+  timeout_per_page: 30
+
+llm:
+  provider: "github"
+  model: "gpt-4o-mini"
+  base_url: "https://models.inference.ai.azure.com"
+  temperature: 0.0
+
+session:
+  state_file: "auth_state.json"
+  max_age_hours: 24
+  session_id: "authenticated_session"
+
+output:
+  folder: "output"
+  results_file: "output/results.json"
+  summary_file: "output/summary.txt"
+  debug_screenshot: "output/debug_login.png"
+
+crawl:
+  excluded_extensions:
+    - ".pdf"
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".gif"
+    - ".zip"
+    - ".csv"
+    - ".mp4"
+    - ".mp3"
+    - ".doc"
+    - ".docx"
+    - ".xls"
+    - ".xlsx"

@@ -1,0 +1,8 @@
+browser-use
+crawl4ai
+playwright
+python-dotenv
+pyyaml
+langchain-openai
+beautifulsoup4
+httpx

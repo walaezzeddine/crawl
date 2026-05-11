@@ -1,0 +1,235 @@
+\chapter{Réalisation du projet}
+
+\section{Introduction}
+Après avoir défini les besoins et conçu l’architecture générale de l’application \textit{Tarteel Maghreb}, la phase de réalisation a consisté à mettre en œuvre concrètement les différentes fonctionnalités prévues dans le cahier des charges. 
+Cette étape a impliqué la mise en place de l’environnement technique, le développement du front-end mobile avec \textit{React Native} et \textit{Expo Go}, l’implémentation du back-end sous \textit{Node.js} ainsi que l’intégration du module d’intelligence artificielle basé sur le modèle \textit{Whisper}. 
+L’objectif de cette phase est de produire une application fonctionnelle, conforme aux spécifications, tout en respectant les contraintes de performance, de sécurité et d’accessibilité.
+
+\section{Environnement de travail}
+La réalisation du projet s’est appuyée sur un ensemble d’outils et de technologies adaptés au développement mobile moderne et à l’intégration de services d’IA :\\
+
+\textbf{Matériel utilisé :} un ordinateur portable doté d’un processeur Intel i5, 8 Go de RAM et d’un système d’exploitation Windows 11, permettant l’exécution des environnements de développement nécessaires.\\
+  
+\textbf{Environnement logiciel :} \textit{Nous allons maintenant décrire l’environnement logiciel avec lequel nous avons effectué notre travail. C’est l’ensemble des outils et de logiciels que nous avons choisi pour développer notre application.}\\
+   
+\begin{itemize}
+  \item \textbf{Visual Studio Code :} éditeur de code cross-platform, open-source et gratuit, supportant de nombreux langages de développement.
+  \item \textbf{Back-end :} \textit{Node.js} avec le framework \textit{Express.js} pour l’implémentation de l’API RESTful, et un service de stockage cloud sécurisé pour la gestion des données utilisateurs et historiques de récitation.
+  \item \textbf{Intelligence artificielle :} modèle \textit{Whisper} pour la reconnaissance vocale et les premiers traitements liés à la détection des erreurs de récitation.
+  \item \textbf{Gestion de versions et collaboration :} \textit{Git} et \textit{GitHub} pour le suivi des modifications et l’intégration continue.
+  \item \textbf{Expo Go :} pour tester rapidement l’application sur des appareils réels et prototyper les fonctionnalités.
+  \item \textbf{Autres outils :} \textit{Postman} pour tester les endpoints de l’API, \textit{Figma} pour le prototypage des interfaces, et \textit{Android Studio} pour l’émulation mobile.
+\end{itemize}
+
+\section{Choix technologiques}
+
+\subsection{Langage de programmation}
+Le langage \textbf{TypeScript}, basé sur JavaScript, a été choisi comme langage principal du développement mobile. 
+TypeScript apporte des fonctionnalités avancées telles que le typage statique, ce qui facilite la maintenance et la fiabilité du code. 
+Il est aujourd'hui largement adopté dans les projets web et mobiles modernes, notamment avec les frameworks \textit{React} et \textit{React Native}, au cœur du développement mobile multiplateforme.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.25\textwidth]{images/TypeScript.png}
+  \caption{Logo de TypeScript}
+\end{figure}
+
+\subsection{Choix du framework front-end}
+Afin de développer une application robuste, évolutive et compatible avec les systèmes Android et iOS, le framework \textbf{React Native} a été retenu. 
+Ce framework open-source, basé sur React, permet de créer des applications mobiles en utilisant des composants réutilisables et une logique JavaScript/TypeScript unique. 
+Il offre également une intégration fluide avec \textit{Expo Go}, qui facilite le prototypage et le test rapide des fonctionnalités sur de vrais appareils.
+
+Les principaux avantages de React Native sont :
+\begin{itemize}
+  \item \textbf{Composants réutilisables :} favorisent la modularité du code et accélèrent le développement.  
+  \item \textbf{Performances améliorées :} grâce au rendu natif et à la gestion optimisée des mises à jour de l’interface utilisateur.  
+  \item \textbf{Écosystème riche et communauté active :} disponibilité de nombreuses bibliothèques, documentation abondante et support de la communauté.  
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.25\textwidth]{images/React Native.png}
+  \caption{Logo de React Native}
+\end{figure}
+
+\subsection{Choix du framework back-end et stockage des données}
+Pour la partie serveur, le choix s’est porté sur \textbf{Node.js} avec le framework \textbf{Express.js}. 
+Cette combinaison permet de construire des APIs REST rapides, légères et scalables, idéales pour un projet nécessitant une communication fluide entre l’application mobile et le serveur. 
+
+Les données utilisateurs, historiques de récitation et résultats des exercices de tajwīd sont stockées dans un \textbf{service cloud sécurisé}, garantissant performance, fiabilité et accessibilité.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.25\textwidth]{images/node js.jpg}
+  \caption{Logo de Node.js}
+\end{figure}
+
+\subsection{Choix de la technologie d’intelligence artificielle}
+Pour l’intégration de l’intelligence artificielle, le modèle \textbf{Whisper} d’OpenAI a été utilisé. 
+Il s’agit d’un modèle de reconnaissance vocale open-source, capable de transcrire la récitation coranique et de détecter les erreurs de prononciation. 
+Whisper a été intégré via des microservices en Python (FastAPI) et connecté à l’application mobile à travers l’API REST du back-end.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.25\textwidth]{images/whisper.png}
+  \caption{Logo du modèle Whisper}
+\end{figure}
+
+\section{Interfaces réalisées}
+
+Dans le cadre de ce projet, plusieurs interfaces ont été développées pour répondre aux besoins des utilisateurs musulmans. Cette section présente les principales interfaces graphiques conçues et implémentées.
+
+\subsection{Page de démarrage (Splash Screen)}
+\noindent
+La figure suivante illustre la \textbf{page de démarrage (Splash Screen)} de l’application. 
+Elle sert d’écran d’accueil et permet à l’utilisateur de découvrir l’identité visuelle de l’application. 
+Cet écran met en valeur le caractère spirituel de l’application à travers la basmala en calligraphie arabe, 
+un fond bleu apaisant avec un motif d’architecture musulmane, ainsi que le logo \textit{Tarteel Maghreb}, 
+renforçant l’identité de la solution.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/SplashScreen.png}
+    \caption{Page de démarrage de l'application}
+    \label{fig:splash_screen}
+\end{figure}
+
+
+
+\subsection{Page d'accueil (Home Page)}
+
+\noindent
+La figure suivante illustre l’\textbf{interface d’accueil (Home Page)} de l’application. 
+Elle sert de hub central pour l’utilisateur, offrant un accès rapide et intuitif aux principales fonctionnalités de l’application. 
+Cette interface présente une salutation islamique accompagnée de la date complète, 
+une section des horaires de prière avec compte à rebours pour la prochaine prière, 
+un tableau des cinq prières quotidiennes, un menu de navigation inférieur permettant d’accéder au Coran numérique, à la direction de la Qibla, aux divisions du Coran (Juz) et à l’exégèse (Tafsir), 
+ainsi qu’une barre de recherche pour trouver rapidement des sourates ou versets.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/home_page.jpg}
+    \caption{Page d'accueil de l'application}
+    \label{fig:home_page}
+\end{figure}
+
+\subsection{Interface de lecture du Coran}
+% Description avant la figure
+\noindent
+La figure suivante illustre l’\textbf{interface de lecture du Coran}. 
+Elle permet à l’utilisateur de lire et d’écouter la récitation du texte sacré. 
+L’interface affiche le texte coranique en arabe selon une mise en page traditionnelle, 
+propose une fonction de lecture audio qui démarre la récitation lors du clic sur le bouton correspondant, 
+et met en évidence les versets ou mots au fur et à mesure de la récitation grâce à un surlignage dynamique. 
+L’utilisateur peut mettre la lecture en pause, la reprendre ou l’arrêter, 
+et naviguer facilement entre les différentes sourates et pages du Coran.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/lecture quran.png}
+    \caption{Interface de lecture et récitation du Coran}
+    \label{fig:quran_reading}
+\end{figure}
+
+
+\subsection{Interface de lecture du Coran}
+
+\noindent
+La figure suivante illustre l’\textbf{interface de lecture d’une page du Coran}. 
+Elle permet à l’utilisateur de consulter le texte sacré avec une mise en page fidèle aux standards coraniques. 
+L’interface affiche le texte arabe complet avec voyelles (tashkeel), indique clairement la page et le juz en cours, 
+et propose un mode de révision dans lequel tous les versets sont révélés. 
+Elle offre également une interface bilingue arabe-français pour améliorer l’accessibilité, 
+signale visuellement l’activation du mode révision grâce à l’icône d’œil, 
+et fournit des instructions claires pour faciliter l’interaction de l’utilisateur avec le texte.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/quran_page.jpg}
+    \caption{Interface de lecture d'une page du Coran}
+    \label{fig:quran_page}
+\end{figure}
+
+
+\subsection{Interface de direction de la Qibla}
+
+\noindent
+La figure suivante illustre l’\textbf{interface de direction de la Qibla}. 
+Elle permet à l’utilisateur de s’orienter correctement vers la Mecque. 
+L’interface présente une boussole indiquant les points cardinaux (N, E, S, W), 
+une flèche ou un indicateur pointant vers la direction de la Kaaba, 
+et affiche la date islamique ainsi que la date grégorienne. 
+Le design est sobre, avec des couleurs apaisantes afin de faciliter la lecture et l’utilisation.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/qibla_interface.jpg}
+    \caption{Interface de direction de la Qibla}
+    \label{fig:qibla_interface}
+\end{figure}
+
+
+
+
+\subsection{Interface de récitation et correction}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/recitation_interface.jpg}
+    
+    \caption{Interface de récitation et correction}
+    \label{fig:recitation_interface}
+\end{figure}
+
+\noindent
+La figure suivante illustre l’\textbf{interface de récitation et correction}. 
+Elle permet à l’utilisateur de pratiquer et d’améliorer sa récitation coranique. 
+L’interface indique la page et le juz en cours, fournit des statistiques de récitation sous forme de pourcentage de précision, 
+et détecte les erreurs de prononciation avec une indication de leur exactitude. 
+Des conseils personnalisés sont proposés pour aider l’utilisateur à améliorer sa récitation. 
+Le temps de traitement est indiqué pour chaque feedback, et un bouton permet de réessayer la récitation.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/recitatin_interface2.jpg}
+    
+    \caption{Interface de récitation et correction}
+    \label{fig:recitation_interface}
+\end{figure}
+
+\subsection{Interface d'enregistrement de récitation}
+
+% Description avant la figure
+\noindent
+La figure suivante illustre l’\textbf{interface d’enregistrement de récitation}. 
+Elle permet à l’utilisateur de pratiquer activement sa récitation du Coran. 
+L’interface indique le mode en cours ("Tilawa") ainsi que le nombre de versets complétés, 
+offre des options de réglage de la taille du texte pour un confort de lecture optimal, 
+et affiche clairement le verset à réciter (par exemple, Sourate 1, Verset 1). 
+Un bouton central permet de lancer l’enregistrement, et un menu de navigation inférieur donne accès aux autres fonctionnalités de l’application.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/recording_interface.jpg}
+    \caption{Interface d'enregistrement de récitation}
+    \label{fig:recording_interface}
+\end{figure}
+
+
+
+\subsection{Considérations techniques}
+Toutes les interfaces ont été développées en respectant les principes de conception spécifiques aux applications religieuses :
+\begin{itemize}
+    \item Design sobre et respectueux conformément à l'éthique islamique
+    \item Police arabe claire et lisible de haute qualité 
+    \item Calculs précis des horaires de prière selon les conventions islamiques
+    \item Algorithmes avancés de reconnaissance vocale pour l'arabe coranique
+    \item Calibration précise des capteurs pour la détermination de la Qibla
+    \item Mode hors-ligne pour l'accès aux fonctionnalités essentielles
+\end{itemize}
+
+\section{Conclusion}
+La phase de réalisation a permis de transformer les spécifications en une application mobile fonctionnelle, intégrant \textit{React Native}, \textit{Node.js} et le modèle \textit{Whisper} pour la reconnaissance vocale, avec un stockage sécurisé des données utilisateurs dans le cloud. Les interfaces offrent une navigation fluide et un design respectueux des principes religieux, tandis que le module IA fournit un feedback en temps réel sur la récitation. Toutes les fonctionnalités clés, telles que l’enregistrement audio, la lecture du Coran et le suivi des erreurs, ont été mises en œuvre avec succès. Cette étape constitue une base solide pour la phase de tests et de validation, garantissant que l’application répond aux besoins pédagogiques et techniques identifiés.

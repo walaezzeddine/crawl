@@ -1,0 +1,29 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/flutter/ephemeral": true,
+        "**/Flutter/ephemeral": true,
+        "**/.symlinks": true,
+        "**/.plugin_symlinks": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\1-first-chapter.aux": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\1-first-chapter.log": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\1-first-chapter.gz": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\1-first-chapter.out": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\main.aux": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\main.log": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\main.gz": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\main.out": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\2-chapter.aux": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\2-chapter.log": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\2-chapter.gz": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\2-chapter.out": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\3-chapter.aux": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\3-chapter.log": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\3-chapter.gz": true,
+        "**/c:\\Users\\Lenovo\\persona generator crawl4AL\\Summer_Internship_Report_template\\3-chapter.out": true
+    }
+}

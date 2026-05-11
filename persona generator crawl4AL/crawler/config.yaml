@@ -1,0 +1,98 @@
+site:
+  base_url: "https://portal-qa.talansm.com"
+  login_url: "https://portal-qa.talansm.com/login"
+  wait_after_login: "**"
+  spa_seed_routes:
+    - "/"
+  max_pages: 200
+  timeout_per_page: 45
+
+llm:
+  provider: "groq"
+  model: "meta-llama/llama-4-scout-17b-16e-instruct"
+  temperature: 1.0
+
+auth:
+  headless: false
+  selector_timeout_ms: 3000
+  page_load_timeout_ms: 30000
+  rest_endpoint: "/api/session"
+  rest_auth_method: "basic"
+  form:
+    wait_before_fill_ms: 5000
+    wait_after_submit_ms: 8000
+    username_selectors:
+      - "#tbLoginUserName"
+      - "input[name='UserName']"
+      - "input[name='username']"
+      - "input[id='username']"
+      - "input[type='text']"
+      - "input[autocomplete='username']"
+      - "input[placeholder*='user' i]"
+      - "input[placeholder*='email' i]"
+      - "#username"
+      - "input[autocomplete='email']"
+      - "input[name='email']"
+      - "input[id='email']"
+    password_selectors:
+      - "#Password"
+      - "input[name='Password']"
+      - "input[type='password']"
+      - "input[name='password']"
+      - "input[id='password']"
+      - "input[autocomplete='current-password']"
+      - "#password"
+      - "input[name='mfaCode']"
+    submit_selectors:
+      - "input[type='submit'][value='Log me in']"
+      - "button[type='submit']"
+      - "input[type='submit']"
+      - "button[id*='login' i]"
+      - "button[class*='login' i]"
+      - "button[class*='submit' i]"
+      - "button:has-text('Next')"
+      - "button:has-text('Continue')"
+      - "button:has-text('Sign in')"
+    success_check:
+      must_not_contain: "login"
+  agent:
+    max_steps: 30
+    snapshot_max_tokens: 4000
+    task_template: >
+      The login page is open at {login_url}.
+      You may be redirected to a Cognito or third-party authentication provider.
+      Find and fill ALL login form fields:
+      - If you see an email/username field, fill with: {username}
+      - If you see a password field, fill with: {password}
+      - Click Login, Next, Continue, or similar submit button.
+      - Handle multi-step flows: after clicking Next/Continue, wait for the next page to load.
+      - Continue until the URL no longer contains 'login' or 'auth' and you're on the main application.
+      - Do NOT navigate manually - only interact with visible form fields and buttons.
+      Success = the URL shows you're logged in (no auth redirect).
+
+session:
+  state_file: "auth_state.json"
+  max_age_hours: 24
+  session_id: "authenticated_session"
+
+output:
+  folder: "output"
+  results_file: "output/results.json"
+  summary_file: "output/summary.txt"
+  debug_screenshot: "output/debug_login.png"
+
+crawl:
+  excluded_extensions:
+    - ".pdf"
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".gif"
+    - ".zip"
+    - ".csv"
+    - ".mp4"
+    - ".mp3"
+    - ".doc"
+    - ".docx"
+    - ".xls"
+    - ".xlsx"

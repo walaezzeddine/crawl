@@ -1,0 +1,4 @@
+PWD C:\Users\Lenovo\persona generator crawl4AL\Summer_Internship_Report_template
+INPUT C:\Users\Lenovo\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT 2-chapter.tex
+OUTPUT 2-chapter.log
